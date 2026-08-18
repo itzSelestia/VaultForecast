@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "vaultforecast",
+  "version": "${version}",
+  "name": "VaultForecast",
+  "description": "Forecasts trial chamber vault drops from the world seed",
+  "authors": ["Selestia"],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/vaultforecast/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.yae.vaultforecast.client.VaultForecastDataGenerator"
+    ],
+    "client": [
+      "dev.yae.vaultforecast.client.VaultForecastClient"
+    ],
+    "main": [
+      "dev.yae.vaultforecast.VaultForecast"
+    ]
+  },
+  "mixins": [
+    "vaultforecast.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
